@@ -9,6 +9,7 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // ✅ ADD THIS LINE
 
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/credits', require('./routes/creditRoutes'));
